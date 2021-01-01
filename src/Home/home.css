@@ -1,0 +1,7 @@
+.home-container {
+    flex: 1;
+    width: 98%;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: #FAFAFA;
+}
