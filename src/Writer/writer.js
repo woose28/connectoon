@@ -6,7 +6,7 @@ const Writer = (props) => {
         <div className="writer-container">
             <a className="writer-link" href={props.writer_link}>
                 <div className="writer-image-container">
-                    <img src={process.env.PUBLIC_URL+"/img/Connectoon_sample.png"} alt="writer_image"/>
+                    <img className="writer-image"src={props.writer_img} alt="writer_image"/>
                     <div className="writer-image-overlay"></div>
                 </div>
             </a>
