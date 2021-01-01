@@ -1,18 +1,34 @@
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './store/modules';
+import thunk from 'redux-thunk';
+
 import './App.css';
 import Header from './Header/header';
-import Writers from './Writer/writers';
+import Home from './Home/home';
 import CopyRight from './CopyRight/copyRight';
 import Footer from './Footer/footer';
+import RegisterContainer from './Register/registerContainer';
 
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <Writers/>
-      <CopyRight/>
-      <Footer/>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Header/>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/register" component={RegisterContainer}/>
+          </Switch>
+          <CopyRight/>
+          <Footer/>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
