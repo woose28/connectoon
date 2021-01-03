@@ -2,6 +2,11 @@ import React from 'react';
 import './writer.css';
 
 const Writer = (props) => {
+    
+    const addComma = (number) => {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    } 
+
     return(
         <div className="writer-container">
             <a className="writer-link" href={props.writer_link}>
@@ -16,7 +21,7 @@ const Writer = (props) => {
                 </div>
             </a>
             <div className="writer-follower">
-                팔로우 {props.writer_follower}명
+                팔로우 {addComma(props.writer_follower)}명
             </div>
         </div>
     )

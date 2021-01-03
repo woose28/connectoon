@@ -15,11 +15,6 @@ const Header = () => {
                         {service_name}
                     </div>
                 </Link>
-                <Link className="header-link" to="/register">
-                    <div className="header-service-enrollment">
-                        등록하기                
-                    </div>
-                </Link>
             </div>
             <div className="header-service-introduction">
                 {service_introduction}
