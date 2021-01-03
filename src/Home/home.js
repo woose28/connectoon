@@ -16,7 +16,6 @@ const Home = (props) => {
                 isSuccess={props.isSuccess}
                 loadData={loadData}
                 userData={props.data}
-                isSuccess={props.isSuccess}
                 final_id={props.final_id}
                 />            
         </div>
