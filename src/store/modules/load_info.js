@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { register_info_success } from './register_info';
 
 const LOAD_INFO_BEFORE = "LOAD_INFO_BEFORE";
 const LOAD_INFO_WAITING = "LOAD_INFO_WAITING";
@@ -29,19 +28,13 @@ export function requestLoad() {
     return async (dispatch) => {
         dispatch(load_info_waiting);
 
-        return axios.get("http://127.0.0.1:8000/load_data/").then(
+        return axios.get("http://54.180.115.78:8000/load_data/").then(
             (response) => {
-                console.log("데이터 로드 통신 성공");
-                console.log(response.data)
-                const payload = preprocessing_data(response.data.user_data);
-                
-                console.log("저장되는 데이터 : ", payload.data)
-                
+                const payload = preprocessing_data(response.data.user_data);    
                 dispatch(load_info_success(payload));
             }
         ).catch(
             (error) => {
-                console.log("데이터 로드 통신 실패");
                 console.log(error);
                 dispatch(load_info_failure());
             }

@@ -21,15 +21,13 @@ export function requestRegister(username, link, email, base64) {
     return (dispatch) => {
         dispatch(register_info_waiting());
         
-        return axios.post("http://127.0.0.1:8000/register/", { user_info: user_info }).then(
+        return axios.post("http://54.180.115.78:8000/register/", { user_info: user_info }).then(
             (response) => {
-                console.log("통신 성공!");
                 dispatch(register_info_success());
                 return "success";
             }
         ).catch(
             (error) => {
-                console.log("통신 에러 발생");
                 dispatch(register_info_failure());
                 return "fail"
             }
