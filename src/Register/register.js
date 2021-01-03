@@ -14,7 +14,6 @@ const Register = (props) => {
     const [ isFileloaded, setIsFileLoaded ] = useState(false);
 
     const [ blurUsername, setBlurUsername ] = useState(true);
-    const [ blurEmail, setBlurEmail ] = useState(true);
     const [ isCorrectLink, setIsCorrectLink ] = useState(true);
     
     const information_guidance = "[개인정보활용 수집, 이용 안내]\n수입항목: 이메일주소\n수집목적: 광고주의 광고 및 협찬 요청을 작가에게 전달하기 위함\n보유, 활용기간: 사이트에 등록되어있는 동안, 소유자가 원할시 언제든지 파기\n\n    - 이메일주소는 광고주의 광고 및 협찬 요청을 이메일 소유주에게 전달하기 위해 수집하며, 광고주에게 직접 노출되는 것은 아닙니다.\n    - 신청자는 개인정보 수집에 대하여 거부할 권리를 가지고 있으며, 제공에 동의하지 않을 경우 등록이 불가함을 안내해드립니다."
@@ -79,15 +78,6 @@ const Register = (props) => {
         }
     }
 
-    const onBlurEmail = () => {
-        if(isTypedEmail){
-            setBlurEmail(true)
-        }
-        else{
-            setBlurEmail(false)
-        }
-    }
-
     const handleImgFile = (e) => {
         e.preventDefault();
         let reader = new FileReader();
@@ -116,7 +106,6 @@ const Register = (props) => {
             alert("대표 이미지 로드 전입니다.");
         }
         else {
-            console.log("서버로 전송 준비 완료");
             props.handleRegister(username, link, email, imgData);
         }
     }
@@ -144,13 +133,8 @@ const Register = (props) => {
 
                 <div className="enroll-row enroll-row-others">
                     <div className="enroll-info">이메일</div>
-                    <input className="enroll-row-input-text" type="text" onChange={handleEmail} placeholder={placeholder_email} onBlur={onBlurEmail} required/>
+                    <input className="enroll-row-input-text" type="text" onChange={handleEmail} placeholder={placeholder_email} required/>
                 </div>
-                <div className="enroll-row">
-                    <div className="enroll-info">{blurEmail ? undefined: " "}</div>
-                    <div className="enroll-error">{blurEmail ? undefined: error_required}</div>
-                </div>
-
                 <div className="enroll-row enroll-row-others">
                     <div className="enroll-info">대표 이미지</div>
                     <input className="enroll-input-file" type="file" accept=".png, .jpg" onChange={handleImgFile} required/>

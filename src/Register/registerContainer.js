@@ -6,11 +6,7 @@ import { register_info_before, register_info_waiting, register_info_success, reg
 
 const RegisterContainer = (props) => {
     const handleOnClick = (username, link, email, base64) => {
-        console.log("register container 핸들 호출됨");
         props.requestRegister(username, link, email, base64).then((result)=>{
-            console.log("결과 확인 전")
-            console.log("현재 isSucceess : ", props.isSuccess);
-            console.log("현재 result : ", result);
             if(result === "success"){
                 alert("등록 성공");
                 window.location = "/";
