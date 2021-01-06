@@ -28,7 +28,7 @@ export function requestLoad() {
     return async (dispatch) => {
         dispatch(load_info_waiting);
 
-        return axios.get("http://54.180.115.78:8000/load_data/").then(
+        return axios.get("http://3.34.99.38:8000/load_data/").then(
             (response) => {
                 const payload = preprocessing_data(response.data.user_data);    
                 dispatch(load_info_success(payload));
