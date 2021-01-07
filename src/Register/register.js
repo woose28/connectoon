@@ -99,9 +99,6 @@ const Register = (props) => {
         else if(!isTypedLink) {
             alert("링크를 입력해주세요.");
         }
-        else if(!isTypedEmail) {
-            alert("이메일을 입력해주세요.");
-        }
         else if(!isFileloaded) {
             alert("대표 이미지 로드 전입니다.");
         }
