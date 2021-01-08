@@ -10,7 +10,7 @@ const Register = (props) => {
     const [ imgData, setImgData ] = useState();
     const [ isTpyedUsername, setIsTypedUsername ] = useState(false);
     const [ isTypedLink, setIsTypedLink ] = useState(false);
-    const [ isTypedEmail, setIsTypedEmail ] = useState(false);
+    const [ , setIsTypedEmail ] = useState(false);
     const [ isFileloaded, setIsFileLoaded ] = useState(false);
 
     const [ blurUsername, setBlurUsername ] = useState(true);
@@ -23,6 +23,7 @@ const Register = (props) => {
 
     const error_required = "*필수 정보입니다.";
     const error_link = "*인스타그램 주소를 입력해주세요.";
+    const restrict_file = "*파일의 확장자는 png 또는 jpg만 가능합니다."
 
     const handleUsername = (e) => {
         setUsername(e.target.value);
@@ -80,6 +81,18 @@ const Register = (props) => {
 
     const handleImgFile = (e) => {
         e.preventDefault();
+
+        if(e.target.value.length <= 0){
+            return;
+        }
+
+        const file_extension = e.target.files[0].name.split('.')[1];
+        if(!is_file_extension_correct(file_extension)){
+            alert("png 또는 jpg 파일만 업로드 가능합니다.")
+            e.target.value = "";
+            return
+        }
+
         let reader = new FileReader();
         let file = e.target.files[0];
         reader.onloadend = () => {
@@ -89,6 +102,20 @@ const Register = (props) => {
 
         reader.readAsDataURL(file);
     }
+
+    const is_file_extension_correct = (extension) => {
+        let res = false;
+        const extension_list = ["png", "jpg"];
+
+        for (let e in extension_list) {
+            if(extension === extension_list[e]){
+                res = true;
+                break;
+            }
+        }
+
+        return res
+    }   
     const handleOnClick = () => {
         if(!isTpyedUsername) {
             alert("계정 이름을 입력해주세요.");
@@ -135,6 +162,10 @@ const Register = (props) => {
                 <div className="enroll-row enroll-row-others">
                     <div className="enroll-info">대표 이미지</div>
                     <input className="enroll-input-file" type="file" accept=".png, .jpg" onChange={handleImgFile} required/>
+                </div>
+                <div className="enroll-row">
+                    <div className="enroll-info">{" "}</div>
+                    <div className="enroll-error">{restrict_file}</div>
                 </div>
                 <div className="enroll-row-button">
                     <button onClick={handleOnClick} disabled={props.isRegistering}>등록하기</button>
