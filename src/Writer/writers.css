@@ -1,8 +1,15 @@
 .writers-container {
+    display: flex;
+    flex-direction: column;
     width: 70%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
+}
+
+.writers-dropdown {
+    width: 100px;
+    align-self: flex-end;
 }
 
 .writers-table {
