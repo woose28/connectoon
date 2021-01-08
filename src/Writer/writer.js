@@ -9,13 +9,13 @@ const Writer = (props) => {
 
     return(
         <div className="writer-container">
-            <a className="writer-link" href={props.writer_link}>
+            <a className="writer-link" href={props.writer_link} target="_blank" rel="noreferrer">
                 <div className="writer-image-container">
                     <img className="writer-image"src={props.writer_img} alt="writer_image"/>
                     <div className="writer-image-overlay"></div>
                 </div>
             </a>
-            <a className="writer-link" href={props.writer_link}>
+            <a className="writer-link" href={props.writer_link} target="_blank" rel="noreferrer">
                 <div className="writer-name">
                     {props.writer_name}
                 </div>

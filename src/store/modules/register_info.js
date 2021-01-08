@@ -21,7 +21,7 @@ export function requestRegister(username, link, email, base64) {
     return (dispatch) => {
         dispatch(register_info_waiting());
         
-        return axios.post("http://3.34.99.38:8000/register/", { user_info: user_info }).then(
+        return axios.post("https://connectoon.co.kr/api/register/", { user_info: user_info }).then(
             (response) => {
                 dispatch(register_info_success());
                 return "success";
