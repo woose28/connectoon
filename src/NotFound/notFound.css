@@ -1,0 +1,11 @@
+.notFound-container {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 97px;
+}
+
+.notFound-txt {
+    align-self: center;
+}
