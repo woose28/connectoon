@@ -5,3 +5,9 @@
   width: 100vw;
   opacity: 1;
 }
+
+@media (max-width: 1200px) {
+  .App {
+    width: 1200px
+  }
+}
