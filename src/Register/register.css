@@ -25,6 +25,7 @@
 
 .enroll-info {
     width: 120px;
+    font: normal normal 500 16px Noto Sans CJK KR;
 }
 
 .enroll-row-first {
@@ -38,6 +39,7 @@
 .enroll-row-input-text {
     width: 100%;
     height: 30px;
+    font: normal normal 500 12px Noto Sans CJK KR;
     padding-left: 0.5rem;
     border-style: solid;
     border-width: 1px;
@@ -48,7 +50,7 @@
 
 .enroll-error {
     width: 100%;
-    font-size: 10px;
+    font: normal normal 500 10px Noto Sans CJK KR;
     color: #FF0000;
 }
 
@@ -68,7 +70,7 @@
     margin-bottom: 20px;
     margin-left: 10%;
     margin-right: 10%;
-    font-size: 10px;
+    font: normal normal 500 10px Noto Sans CJK KR;
     color: #808080;
     white-space: pre-wrap;
 }

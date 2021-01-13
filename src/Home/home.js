@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import './home.css';
 import { connect } from 'react-redux';
 import { load_info_before, requestLoad } from '../store/modules/load_info';
@@ -10,12 +10,29 @@ import Search_icon_svg from '../assets/img/search_icon.svg';
 //import Writers from '../Writer/writers';
 import NewWriters from '../newWriter/newWriters';
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+`;
+
+
 const ContainerSearch = styled.div`
-    width: 1920px;
+    width: 100%;
     margin-top: 109px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    @media (max-width: 1200px) {
+        width: 1200px
+    }
+
+    animation: ${fadeIn};
+    animation-duration: 2s;
 `;
 
 const SearchIcon = styled.img`

@@ -45,7 +45,7 @@ const WriterImg = styled.img`
 
 const WriterName = styled.div`
     width: fit-content;
-    font: normal normal 500 12px Noto Sans CJK KR; 
+    font: normal normal 500 16px Noto Sans CJK KR; 
     color: #000000;
     text-decoration: none;
     margin-top: 12px;
@@ -55,6 +55,7 @@ const FollowerContainer = styled.div`
     display: flex;
     flex-direction: row;
     margin-top: 5px;
+    align-items: center;
 `;
 
 const FollowerIcon = styled.img`
@@ -64,7 +65,7 @@ const FollowerIcon = styled.img`
 
 const WriterFollower = styled.div`
     width: fit-content;
-    font: normal normal 500 12px Noto Sans CJK KR; 
+    font: normal normal 500 16px Noto Sans CJK KR; 
     color: #5FD396;
     text-decoration: none;
     margin-left: 4px;

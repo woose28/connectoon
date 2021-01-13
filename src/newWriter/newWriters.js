@@ -8,8 +8,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 41px;
-    margin-left: 402px;
-    margin-right: 402px;
+    align-self: center;
 `;
 
 const Dropdown = styled.select`

@@ -5,9 +5,10 @@
     top: 0;
     z-index: 1;
     height: 97px;
-    width: 1920px;
+    width: 100%;
     background-color: #ffffff;
 }
+
 
 .header-first-line {
     display: flex;
@@ -19,7 +20,7 @@
 .header-link {
     width: fit-content;
     margin-top: 39px;
-    margin-left: 343px;
+    margin-left: 17.8645%;
     text-decoration: none;
 }
 
@@ -47,6 +48,12 @@
     margin-top: 10px;
 }
 
+@media screen and (max-width: 1200px) {
+    .header-container {
+        width: 1200px;
+    }
+}
+/*
 @media screen and (max-width: 755px) {
     .header-service-name {
         font-size: 2.649vw;
@@ -79,3 +86,4 @@
         margin-top: 10px;
     }
 }
+*/
